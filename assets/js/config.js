@@ -1,24 +1,18 @@
-// ─────────────────────────────────────────────────────────────
-//  Site settings. Edit this file after creating your Firebase project.
-//  Until the Firebase values are filled in, the site runs in DEMO MODE:
-//  logins and progress are stored only in the visitor's own browser.
-// ─────────────────────────────────────────────────────────────
-
+// Site settings.
 export const FIREBASE_CONFIG = {
-  apiKey: "REPLACE_ME",
-  authDomain: "REPLACE_ME.firebaseapp.com",
-  projectId: "REPLACE_ME",
-  storageBucket: "REPLACE_ME.appspot.com",
-  messagingSenderId: "REPLACE_ME",
-  appId: "REPLACE_ME"
+  apiKey: "AIzaSyBZA4KwYDAKceaM5oHwyq0IbmYqJhDwIAc",
+  authDomain: "console-loggers-9e36c.firebaseapp.com",
+  projectId: "console-loggers-9e36c",
+  storageBucket: "console-loggers-9e36c.firebasestorage.app",
+  messagingSenderId: "929903467799",
+  appId: "1:929903467799:web:665131eda3f479efe8ab52"
 };
 
 // Email addresses that can open the instructor view on the dashboard.
-// Keep this list in sync with isInstructor() in firestore.rules.
-export const INSTRUCTOR_EMAILS = ["replace-with-your-email@gmail.com"];
+// Keep this list in sync with isInstructor() in the Firestore rules.
+export const INSTRUCTOR_EMAILS = ["nikhilsainiiimt@gmail.com"];
 
-// Shown on the sign-up form. The real check happens in firestore.rules,
-// so changing the join code means editing firestore.rules too.
+// Shown on the sign-up form. The real check happens in the Firestore rules.
 export const JOIN_CODE_HINT = "Ask your instructor for the club join code.";
 
 export const CLUB = {
