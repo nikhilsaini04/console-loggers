@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Console Loggers · NIU Coding Club</title>
+<meta name="description" content="The Console Loggers is the coding club of Noida International University for B.Tech CSE 1st, 2nd and 3rd year students. Daily practice, weekly assessments and a tracked DSA sheet.">
+<meta property="og:title" content="The Console Loggers · NIU Coding Club">
+<meta property="og:description" content="Daily practice, weekly assessments and a tracked DSA sheet for B.Tech CSE students at NIU.">
+<link rel="icon" type="image/png" href="assets/img/logo-64.png">
+<link rel="apple-touch-icon" href="assets/img/logo-160.png">
+<script>document.documentElement.classList.add("fx");setTimeout(function(){if(!document.documentElement.classList.contains("fx-ready")){document.documentElement.classList.remove("fx")}},2500)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=Martian+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<div class="hero-band">
+  <canvas id="heroFx" aria-hidden="true"></canvas>
+  <div class="grid-floor" aria-hidden="true"></div>
+  <div class="scan" aria-hidden="true"></div>
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <span class="eyebrow" data-reveal>Coding club · Noida International University</span>
+      <h1 data-reveal style="--d:.05s">The <span class="gold">Console</span> Loggers</h1>
+      <p class="typed" data-reveal style="--d:.1s" aria-label="Java, data structures, algorithms, problem solving, placement prep" data-typed='["System.out.println(\"Java\");","solve(dataStructures);","master(algorithms);","crack(placements);"]'>System.out.println("Java");</p>
+      <p class="lede" data-reveal style="--d:.15s">A community of builders, debuggers and problem solvers. We crack algorithms, write production-style code and train for the interviews top tech companies run, from your first for loop to graphs, dynamic programming and system design. Compile your skills. Ship your future.</p>
+      <div class="hero-status" data-reveal style="--d:.18s"><span><i></i>Batches open for 1st, 2nd &amp; 3rd year</span><span>T&amp;P × SET</span></div>
+      <div class="hero-actions" data-reveal style="--d:.2s">
+        <a class="btn btn-primary" href="login.html" id="heroCta">Member login</a>
+        <a class="btn btn-ghost" href="dsa.html">Browse the DSA Sheet</a>
+        <a class="btn btn-gold" href="instructor.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>Meet your instructor</a>
+      </div>
+    </div>
+    <div class="seal-wrap" data-reveal="zoom" style="--d:.1s">
+      <div class="seal-glow" aria-hidden="true"></div>
+      <picture><source srcset="assets/img/logo-640.webp" type="image/webp"><img class="seal" src="assets/img/logo-640.png" width="640" height="640" alt="The Console Loggers club seal: Noida International University crest above a laptop showing code, framed by laurels, with the text T&amp;P × SET Department"></picture>
+      <div class="orbit" aria-hidden="true"><span>Java</span><span>&lt;/&gt; DSA</span><span>O(log n)</span><span>LeetCode</span></div>
+    </div>
+  </section>
+</div>
+
+<div class="marquee" aria-label="Topics covered">
+  <div class="marquee-track">
+    <span>Foundations</span><span>Recursion</span><span>Sorting</span><span>Hashing</span><span>Arrays</span><span>Binary Search</span><span>Strings</span><span>Linked Lists</span><span>Backtracking</span><span>Bit Manipulation</span><span>Stacks &amp; Queues</span><span>Sliding Window</span><span>Heaps</span><span>Greedy</span><span>Binary Trees</span><span>BST</span><span>Graphs</span><span>Dynamic Programming</span><span>Tries</span><span>KMP &amp; Z-function</span><span>Segment Trees</span>
+    <span aria-hidden="true">Foundations</span><span aria-hidden="true">Recursion</span><span aria-hidden="true">Sorting</span><span aria-hidden="true">Hashing</span><span aria-hidden="true">Arrays</span><span aria-hidden="true">Binary Search</span><span aria-hidden="true">Strings</span><span aria-hidden="true">Linked Lists</span><span aria-hidden="true">Backtracking</span><span aria-hidden="true">Bit Manipulation</span><span aria-hidden="true">Stacks &amp; Queues</span><span aria-hidden="true">Sliding Window</span><span aria-hidden="true">Heaps</span><span aria-hidden="true">Greedy</span><span aria-hidden="true">Binary Trees</span><span aria-hidden="true">BST</span><span aria-hidden="true">Graphs</span><span aria-hidden="true">Dynamic Programming</span><span aria-hidden="true">Tries</span><span aria-hidden="true">KMP &amp; Z-function</span><span aria-hidden="true">Segment Trees</span>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="block" id="about" style="padding-top:48px">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">About the club</span>
+      <h2>Practice daily. Measure everything.</h2>
+    </div>
+    <div class="grid g3" data-stagger=".1">
+      <div class="card hud" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg></span><h3>Learn by solving</h3><p>Sessions are built around problems, not slides. Each topic starts with the idea, then moves straight into code.</p></div>
+      <div class="card hud" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg></span><h3>Track everything</h3><p>Every member has an account. Your solved problems, notes and revision list are saved and visible on your dashboard.</p></div>
+      <div class="card hud" data-reveal><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></span><h3>Placement focused</h3><p>The problems and patterns we cover are the ones asked in coding rounds and technical interviews.</p></div>
+    </div>
+  </section>
+
+  <section class="block" id="routine">
+    <div class="split">
+      <div style="display:grid;gap:24px">
+        <div class="sec-head" data-reveal>
+          <span class="eyebrow">How the club works</span>
+          <h2>How the club works</h2>
+          <p class="muted">Monitoring is strict. Daily work adds up, and the assessments show who is keeping pace.</p>
+        </div>
+        <div class="routine-line"><i></i></div>
+        <div class="routine" style="grid-template-columns:repeat(2,minmax(0,1fr))" data-reveal>
+          <div><span class="freq">Regular</span><h3>Club sessions</h3><p>In-person sessions on the current topic, with live problem solving.</p></div>
+          <div><span class="freq">Daily</span><h3>Assignments</h3><p>A small set of problems every day, mostly from the DSA Sheet.</p></div>
+          <div style="border-left:0;border-top:1px solid var(--line)"><span class="freq">Weekly</span><h3>Assessment</h3><p>A timed test on the week's topic, without looking things up.</p></div>
+          <div style="border-top:1px solid var(--line)"><span class="freq">Bi-weekly</span><h3>Review test</h3><p>A longer test that mixes earlier topics, so nothing is forgotten.</p></div>
+        </div>
+      </div>
+      <div class="console typing" role="img" aria-label="A browser console showing a member's week as log messages" data-reveal="right">
+        <div class="console-bar"><i></i><i></i><i></i><span>Console — console_loggers</span></div>
+        <div class="console-body">
+          <div class="log in"><span class="g">&gt;</span><span><span class="kw">const</span> me = club.<b>join</b>(<span class="str">"B.Tech CSE"</span>)</span><span></span></div>
+          <div class="log ok"><span class="g">✓</span><span>Welcome to The Console Loggers</span><span class="src">club.js:1</span></div>
+          <div class="log out"><span class="g"></span><span>Daily assignment posted: <span class="lit">3</span> problems</span><span class="src">daily.js:12</span></div>
+          <div class="log out"><span class="g"></span><span>Progress: { solved: <span class="lit">142</span>, step: <span class="str">"Binary Search"</span> }</span><span class="src">tracker.js:42</span></div>
+          <div class="log warn"><span class="g">⚠</span><span>Weekly assessment coming up. Revise starred problems.</span><span class="src">weekly.js:7</span></div>
+          <div class="log err"><span class="g">✕</span><span>Uncaught Excuse: "I'll start tomorrow"</span><span class="src">you.js:404</span></div>
+          <div class="log in"><span class="g">&gt;</span><span>console.<b>log</b>(<span class="str">"Start today."</span>)<span class="caret"></span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="interviews">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Built for product-company interviews</span>
+      <h2>Train for real interview rounds</h2>
+      <p class="muted">Large product companies, often called FAANG or MAANG, hire through a similar set of rounds. Club practice is planned around each one, so the interview feels familiar when you get there.</p>
+    </div>
+    <div class="rounds" data-stagger=".1">
+      <div class="card hud" data-reveal><span class="rn"></span><h3>Online assessment</h3><p>Two or three timed coding problems, usually easy to medium. Speed and clean edge-case handling matter most.</p></div>
+      <div class="card hud" data-reveal><span class="rn"></span><h3>DSA interviews</h3><p>One or more live coding rounds. You explain a brute-force idea, improve it, code it and state the time and space complexity.</p></div>
+      <div class="card hud" data-reveal><span class="rn"></span><h3>System design</h3><p>Designing a service such as a URL shortener or a chat app: APIs, databases, caching and scaling. Asked more as you gain experience.</p></div>
+      <div class="card hud" data-reveal><span class="rn"></span><h3>Behavioral</h3><p>Questions about projects, teamwork and mistakes. Answers are built with the STAR method: situation, task, action, result.</p></div>
+    </div>
+    <div style="display:grid;gap:12px" data-reveal>
+      <span class="label">The kind of interviews asked at companies such as</span>
+      <div class="co-strip"><span class="co">Google</span><span class="co">Amazon</span><span class="co">Microsoft</span><span class="co">Meta</span><span class="co">Apple</span><span class="co">Netflix</span><span class="co">Adobe</span><span class="co">Uber</span><span class="co">Atlassian</span><span class="co">Flipkart</span></div>
+      <p class="fine">Company names describe the style of interview we prepare for. The club isn't affiliated with or endorsed by these companies.</p>
+    </div>
+  </section>
+
+  <section class="block" id="compete">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Compete and get rated</span>
+      <h2>Compete where recruiters look</h2>
+      <p class="muted">A contest rating is public proof of your problem-solving skill. Members take part in online contests regularly and share their results with the club.</p>
+    </div>
+    <div class="grid g3" data-stagger=".12">
+      <div class="card" data-reveal>
+        <div class="mono-badge" style="--c1:#4beb93;--c2:#1f9e5a"><span>LC</span></div>
+        <h3>LeetCode</h3>
+        <p>The main platform for interview preparation. Every link on the DSA Sheet opens here.</p>
+        <ul><li>Weekly and biweekly contests</li><li>Company-style interview problems</li><li>Daily challenge to build a streak</li></ul>
+        <a class="plat-link" href="https://leetcode.com/" target="_blank" rel="noopener">Open LeetCode →</a>
+      </div>
+      <div class="card" data-reveal>
+        <div class="mono-badge" style="--c1:#ffe08f;--c2:#d8a636"><span>CC</span></div>
+        <h3>CodeChef</h3>
+        <p>An Indian competitive programming platform with contests for every level, from beginner to expert.</p>
+        <ul><li>Weekly Starters contests</li><li>Star ratings from 1★ to 7★</li><li>Practice problems sorted by difficulty</li></ul>
+        <a class="plat-link" href="https://www.codechef.com/" target="_blank" rel="noopener">Open CodeChef →</a>
+      </div>
+      <div class="card" data-reveal>
+        <div class="mono-badge" style="--c1:#7ef0e4;--c2:#2bb3a6"><span>CF</span></div>
+        <h3>Codeforces</h3>
+        <p>The best-known platform for competitive programming, with fast, tough contests and an active community.</p>
+        <ul><li>Div. 4 to Div. 1 rounds</li><li>Rating titles from Newbie upward</li><li>Editorials after every round</li></ul>
+        <a class="plat-link" href="https://codeforces.com/" target="_blank" rel="noopener">Open Codeforces →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="tracks">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Beyond DSA</span>
+      <h2>Go beyond DSA</h2>
+      <p class="muted">DSA gets you through the interview. These tracks help you choose what to build and specialize in. Each one has a starter roadmap and free resources on the Practice page.</p>
+    </div>
+    <div class="tracks" data-stagger=".08">
+      <a class="card" data-reveal href="practice.html#tracks" style="text-decoration:none;color:inherit">
+        <span class="track-ico"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect class="draw" x="11" y="11" width="18" height="18" rx="3"/><path d="M16 4v5M24 4v5M16 31v5M24 31v5M4 16h5M4 24h5M31 16h5M31 24h5"/><path class="blink" d="M20 15l1.6 3.4L25 20l-3.4 1.6L20 25l-1.6-3.4L15 20l3.4-1.6z" fill="currentColor" stroke="none"/></svg></span>
+        <h3>Artificial Intelligence</h3><p>How machines reason, search and use language models, and how to build with AI tools.</p></a>
+      <a class="card" data-reveal href="practice.html#tracks" style="text-decoration:none;color:inherit">
+        <span class="track-ico"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 35h30M5 35V5"/><path class="draw" d="M8 31L33 9"/><g fill="currentColor" stroke="none"><circle cx="11" cy="25" r="2"/><circle cx="15" cy="28" r="2"/><circle cx="19" cy="19" r="2"/><circle cx="24" cy="20" r="2"/><circle cx="27" cy="12" r="2"/><circle class="blink" cx="31" cy="15" r="2"/></g></svg></span>
+        <h3>Machine Learning</h3><p>Training models on data: regression, classification, evaluation, and the math behind them.</p></a>
+      <a class="card" data-reveal href="practice.html#tracks" style="text-decoration:none;color:inherit">
+        <span class="track-ico"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="15" width="9" height="10" rx="2"/><rect x="16" y="15" width="8" height="10" rx="2"/><path class="draw" d="M12 20h4M24 20l4-9M24 20l4 9M24 20h4"/><ellipse cx="33" cy="9" rx="4" ry="2"/><path d="M29 9v4c0 1.1 1.8 2 4 2s4-.9 4-2V9"/><rect x="29" y="25" width="8" height="8" rx="2"/><rect x="29" y="17" width="8" height="6" rx="2" class="blink"/></svg></span>
+        <h3>System Design</h3><p>Designing services that scale: load balancers, caching, databases, queues and trade-offs.</p></a>
+      <a class="card" data-reveal href="practice.html#tracks" style="text-decoration:none;color:inherit">
+        <span class="track-ico"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="32" height="28" rx="3"/><path d="M4 13h32"/><g fill="currentColor" stroke="none"><circle cx="8.5" cy="9.5" r="1"/><circle cx="12" cy="9.5" r="1"/></g><path class="draw" d="M16 19l-4 4 4 4M24 19l4 4-4 4M21.5 17.5l-3 11"/></svg></span>
+        <h3>Web Development</h3><p>HTML, CSS and JavaScript, then a framework, so you can build and ship real projects.</p></a>
+      <a class="card" data-reveal href="practice.html#tracks" style="text-decoration:none;color:inherit">
+        <span class="track-ico"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="5" width="28" height="9" rx="2"/><rect x="6" y="17" width="28" height="9" rx="2"/><path d="M11 9.5h6M11 21.5h6"/><circle cx="29" cy="9.5" r="1.3" fill="currentColor" class="blink"/><circle cx="29" cy="21.5" r="1.3" fill="currentColor"/><path class="draw" d="M15 30c-2 0-3 1-3 2.5S11 35 10 35c1 0 2 .5 2 2M25 30c2 0 3 1 3 2.5s1 2.5 2 2.5c-1 0-2 .5-2 2"/></svg></span>
+        <h3>Java Backend</h3><p>REST APIs with Spring Boot, databases with SQL and JPA, and deploying services, all in the club's main language.</p></a>
+    </div>
+  </section>
+
+  <section class="block" id="batches">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Batches</span>
+      <h2>A batch for every year</h2>
+      <p class="muted">Each year has its own batch, so the pace fits what you already know.</p>
+    </div>
+    <div class="grid g3" data-stagger=".12">
+      <div class="card" data-reveal><span class="tag info">1st year</span><h3>Foundations</h3><ul><li>Java syntax and logic building</li><li>Patterns and number problems</li><li>Arrays, strings and basic recursion</li></ul></div>
+      <div class="card" data-reveal><span class="tag info">2nd year</span><h3>Core DSA</h3><ul><li>Hashing, sorting and binary search</li><li>Linked lists, stacks and queues</li><li>Trees, sliding window and greedy</li></ul></div>
+      <div class="card" data-reveal><span class="tag info">3rd year</span><h3>Advanced and placement prep</h3><ul><li>Graphs and dynamic programming</li><li>Tries and segment trees</li><li>Timed contests and mock interviews</li></ul></div>
+    </div>
+  </section>
+
+  <section class="block" id="programs">
+    <div class="sec-head" data-reveal><span class="eyebrow">Learning programs</span><h2>Pick a track. <span class="neon">Start shipping.</span></h2>
+      <p class="muted">Every program is free for club members, ordered from basic to advanced, and tracked on your dashboard.</p></div>
+    <div class="programs" id="programGrid"></div>
+  </section>
+
+  <section class="block" id="rules">
+    <div class="sec-head" data-reveal><span class="eyebrow">Code of conduct</span><h2>Club rules</h2></div>
+    <ul class="rules" data-stagger=".08">
+      <li data-reveal="left"><code>attendance</code><span>Attend every session. Tell the instructor in advance if you can't make it.</span></li>
+      <li data-reveal="left"><code>daily</code><span>Submit the daily assignment on time. Unsolved problems count against your progress.</span></li>
+      <li data-reveal="left"><code>dress_code</code><span>Formal dress at every club session.</span></li>
+      <li data-reveal="left"><code>honesty</code><span>Only tick problems you solved yourself. Copying solutions shows up in the assessments.</span></li>
+      <li data-reveal="left"><code>respect</code><span>Help batchmates who are stuck. Explain the idea; don't hand over your code.</span></li>
+    </ul>
+  </section>
+
+  <section class="block" id="faq">
+    <div class="sec-head" data-reveal><span class="eyebrow">FAQ</span><h2>Frequently asked questions</h2></div>
+    <div data-reveal>
+      <details class="faq"><summary>Who can join?</summary><p>B.Tech CSE students of NIU in their 1st, 2nd or 3rd year. Intake is limited, and the instructor selects members for each batch.</p></details>
+      <details class="faq"><summary>How do I get an account?</summary><p>Once you're selected, the instructor gives you the club join code. Open “Member login”, choose “Create account”, and enter your name, roll number, year and the join code.</p></details>
+      <details class="faq"><summary>Which language do we use?</summary><p>Club sessions are taught in Java. The practice sheets also cover 12 other languages, from C and Python to Go and Rust, plus SQL and system design.</p></details>
+      <details class="faq"><summary>Do I need any prior coding experience?</summary><p>No. The 1st year batch starts from the basics. Other batches assume you know the topics from earlier steps of the DSA Sheet.</p></details>
+      <details class="faq"><summary>Can the instructor see my progress?</summary><p>Yes. The instructor sees each member's solved count by step and when they last practiced. Other members only see the leaderboard totals.</p></details>
+      <details class="faq"><summary>I forgot my password. What do I do?</summary><p>On the login page, type your email and click “Forgot your password?”. A reset link is sent to your inbox.</p></details>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="cta" data-reveal="zoom">
+      <img class="cta-seal" src="assets/img/logo-640.webp" alt="" aria-hidden="true">
+      <div style="display:grid;gap:8px;position:relative"><h2>Already a member?</h2><p>Log in to see today's progress and pick up where you left off.</p></div>
+      <a class="btn btn-gold" href="login.html" style="position:relative">Member login</a>
+    </div>
+  </section>
+</main>
+<script type="module">
+  import { mountLayout } from "./assets/js/layout.js";
+  import { onUser } from "./assets/js/store.js";
+  import { mountPrograms } from "./assets/js/programs.js";
+  mountPrograms(document.getElementById("programGrid"));
+  mountLayout();
+  onUser(u => { const b = document.getElementById("heroCta"); if (u) { b.textContent = "Go to my dashboard"; b.href = "dashboard.html"; } });
+</script>
+</body>
+</html>

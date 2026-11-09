@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tech Map · The Console Loggers</title>
+<meta name="description" content="The main technologies in front-end, back-end, databases, DevOps, Git and GitHub, Android, iOS, data science, data analysis, machine learning, AI and cyber security, in the order to learn them.">
+<link rel="icon" type="image/png" href="assets/img/logo-64.png">
+<link rel="apple-touch-icon" href="assets/img/logo-160.png">
+<script>document.documentElement.classList.add("fx");setTimeout(function(){if(!document.documentElement.classList.contains("fx-ready")){document.documentElement.classList.remove("fx")}},2500)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=Martian+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<main class="wrap">
+  <div class="page-head">
+    <span class="eyebrow">Tech Map</span>
+    <h1>Explore the Tech Map</h1>
+    <p class="lede">Pick an area to see its main tools, what each one does, and the order to learn them in. You don't need everything: go deep in one area and know the basics of the rest.</p>
+  </div>
+
+  <div class="toolbar" role="search" style="top:64px">
+    <div class="chips" id="areaChips" aria-label="Area"></div>
+    <label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="tq" type="search" placeholder="Search technologies" aria-label="Search technologies"></label>
+  </div>
+
+  <div class="stage-key">
+    <span><i class="sd s1"></i>Start here</span><span><i class="sd s2"></i>Learn next</span><span><i class="sd s3"></i>Later or to specialize</span>
+  </div>
+  <div id="techAreas" style="display:grid;gap:40px;margin-top:20px"></div>
+  <div class="empty" id="techEmpty" hidden>No technologies match your search.</div>
+</main>
+<script type="module" src="assets/js/tech.js"></script>
+</body>
+</html>

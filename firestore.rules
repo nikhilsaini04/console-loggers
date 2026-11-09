@@ -1,0 +1,42 @@
+rules_version = '2';
+// Paste this into Firebase console → Firestore Database → Rules, then click Publish.
+// 1. Replace the email in isInstructor() with your own (same as INSTRUCTOR_EMAILS in assets/js/config.js).
+// 2. Replace CHANGE-THIS-CODE with your club join code. Share it only with selected students.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    // The email must be verified, so nobody can claim the instructor address without owning that inbox.
+    function verified() { return signedIn() && request.auth.token.email_verified == true; }
+    function isInstructor() {
+      return verified() && request.auth.token.email in ['replace-with-your-email@gmail.com'];
+    }
+    function isOwner(uid) { return signedIn() && request.auth.uid == uid; }
+
+    // One document per student: profile + progress.
+    match /users/{uid} {
+      allow read: if isOwner(uid) || isInstructor();
+      allow create: if isOwner(uid)
+        && request.resource.data.joinCode == 'CHANGE-THIS-CODE'
+        && request.resource.data.name is string && request.resource.data.name.size() <= 80
+        && request.resource.data.roll is string && request.resource.data.roll.size() <= 40
+        && request.resource.data.year in ['1st year', '2nd year', '3rd year']
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.verified == (request.auth.token.email_verified == true);
+      // Students can save progress only after verifying their email.
+      // They can't change their name, roll number, year or email.
+      allow update: if isOwner(uid) && verified()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['dsa', 'practice', 'counts', 'coding', 'updatedAt', 'verified'])
+        && (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['verified']) || request.resource.data.verified == true);
+      // The instructor can correct profiles or remove a student.
+      allow update, delete: if isInstructor();
+    }
+
+    // Public-to-members leaderboard: name, year and totals only.
+    match /leaderboard/{uid} {
+      allow read: if signedIn();
+      allow write: if isOwner(uid) && verified() && exists(/databases/$(database)/documents/users/$(uid));
+      allow delete: if isInstructor();
+    }
+  }
+}

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log in · The Console Loggers</title>
+<meta name="description" content="Member login for The Console Loggers coding club.">
+<link rel="icon" type="image/png" href="assets/img/logo-64.png">
+<link rel="apple-touch-icon" href="assets/img/logo-160.png">
+<script>document.documentElement.classList.add("fx");setTimeout(function(){if(!document.documentElement.classList.contains("fx-ready")){document.documentElement.classList.remove("fx")}},2500)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=Martian+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="auth-page">
+<div class="auth-shell">
+  <canvas id="heroFx" aria-hidden="true"></canvas>
+  <div class="grid-floor" aria-hidden="true"></div>
+
+  <!-- Brand panel -->
+  <aside class="auth-brand" aria-label="About the member area">
+    <div class="brand-seal" data-reveal="zoom">
+      <div class="seal-ring" aria-hidden="true"></div>
+      <picture><source srcset="assets/img/logo-160.webp" type="image/webp"><img src="assets/img/logo-160.png" width="160" height="160" alt="The Console Loggers seal"></picture>
+    </div>
+    <div class="brand-copy">
+      <span class="eyebrow" data-reveal>Member area</span>
+      <h1 data-reveal style="--d:.05s">Welcome back,<br><span class="gold">logger.</span></h1>
+      <p class="lede" data-reveal style="--d:.1s">Your DSA Sheet, practice sheets and progress are waiting for you.</p>
+    </div>
+
+    <div class="console mini-term" aria-hidden="true" data-reveal style="--d:.15s">
+      <div class="console-bar"><i></i><i></i><i></i><span>auth — console_loggers</span></div>
+      <div class="console-body" id="authTerm"></div>
+    </div>
+
+    <ul class="perks" data-stagger=".08">
+      <li data-reveal><span class="perk-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg></span><div><b>Track every problem</b><span>Progress saved to your account, on any device</span></div></li>
+      <li data-reveal><span class="perk-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg></span><div><b>2,800+ practice items</b><span>DSA, languages, CS subjects and aptitude</span></div></li>
+      <li data-reveal><span class="perk-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span><div><b>Club leaderboard</b><span>See where you stand in your batch</span></div></li>
+    </ul>
+  </aside>
+
+  <!-- Form panel -->
+  <main class="auth-panel">
+    <div class="auth-card" data-reveal="zoom" style="--d:.1s">
+      <div class="auth-card-head">
+        <picture><source srcset="assets/img/logo-64.webp" type="image/webp"><img class="auth-mini-logo" src="assets/img/logo-64.png" width="44" height="44" alt=""></picture>
+        <div><h2 id="formTitle">Log in</h2><p class="muted" id="formSub">Enter your club account details.</p></div>
+      </div>
+
+      <div class="seg" role="tablist" aria-label="Log in or create account">
+        <span class="seg-ink" aria-hidden="true"></span>
+        <button role="tab" id="tabLogin" aria-selected="true">Log in</button>
+        <button role="tab" id="tabSignup" aria-selected="false">Create account</button>
+      </div>
+
+      <div id="googleWrap">
+        <button class="btn btn-block gbtn" type="button" id="googleBtn"><svg class="g-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 12h6a6 6 0 11-1.8-4.3"/></svg><span class="btn-label">Continue with Google</span><span class="spinner" aria-hidden="true"></span></button>
+        <div class="or-div"><span>or use email</span></div>
+      </div>
+
+      <div class="alert" id="msg" role="alert" hidden></div>
+
+      <form class="stack auth-form" id="loginForm" novalidate>
+        <div class="fl">
+          <input id="liEmail" type="email" autocomplete="email" placeholder=" " required>
+          <label for="liEmail">Email address</label>
+          <svg class="fl-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </div>
+        <div class="fl">
+          <input id="liPass" type="password" autocomplete="current-password" placeholder=" " required>
+          <label for="liPass">Password</label>
+          <svg class="fl-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>
+          <button type="button" class="eye" data-for="liPass" aria-label="Show password"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button>
+        </div>
+        <p class="caps" id="capsLogin" hidden>Caps Lock is on.</p>
+        <div class="row-between">
+          <label class="remember"><input type="checkbox" id="liRemember" checked> Keep me logged in</label>
+          <button class="linkbtn" type="button" id="forgotBtn">Forgot password?</button>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit" id="liBtn"><span class="btn-label">Log in</span><span class="spinner" aria-hidden="true"></span></button>
+        <p class="switch-note">New to the club? <button type="button" class="linkbtn" data-goto="signup">Create an account</button></p>
+      </form>
+
+      <form class="stack auth-form" id="signupForm" novalidate hidden>
+        <div class="fl">
+          <input id="suName" autocomplete="name" placeholder=" " required>
+          <label for="suName">Full name</label>
+          <svg class="fl-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+        </div>
+        <div class="row2">
+          <div class="fl">
+            <input id="suRoll" placeholder=" " required>
+            <label for="suRoll">Roll number</label>
+            <svg class="fl-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg>
+          </div>
+          <div class="fl fl-select">
+            <select id="suYear" required><option value="">Year</option><option>1st year</option><option>2nd year</option><option>3rd year</option></select>
+            <svg class="fl-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          </div>
+        </div>
+        <div class="fl">
+          <input id="suEmail" type="email" autocomplete="email" placeholder=" " required>
+          <label for="suEmail">Email address</label>
+          <svg class="fl-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </div>
+        <div class="fl">
+          <input id="suPass" type="password" autocomplete="new-password" minlength="6" placeholder=" " required>
+          <label for="suPass">Password (6+ characters)</label>
+          <svg class="fl-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>
+          <button type="button" class="eye" data-for="suPass" aria-label="Show password"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button>
+        </div>
+        <div class="strength" aria-live="polite"><div class="strength-bar"><i id="strBar"></i></div><span id="strText">Use letters, numbers and a symbol.</span></div>
+        <p class="caps" id="capsSignup" hidden>Caps Lock is on.</p>
+        <div class="fl" id="codeField">
+          <input id="suCode" autocomplete="off" placeholder=" " required>
+          <label for="suCode">Club join code</label>
+          <svg class="fl-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3"/></svg>
+          <small id="codeHint" class="fl-hint"></small>
+        </div>
+        <label id="demoInstrWrap" class="remember" hidden><input type="checkbox" id="suInstr"> Preview as the instructor (demo mode only)</label>
+        <button class="btn btn-primary btn-block" type="submit" id="suBtn"><span class="btn-label">Create account</span><span class="spinner" aria-hidden="true"></span></button>
+        <p class="switch-note">Already a member? <button type="button" class="linkbtn" data-goto="login">Log in</button></p>
+      </form>
+
+      <!-- Shown after signup until the student clicks the link in the email -->
+      <section class="verify-box" id="verifyBox" hidden aria-live="polite">
+        <div class="vf-ico" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <p>We sent a verification link to <b id="vfEmail"></b>. Open it, then come back here and continue.</p>
+        <p class="muted small">Can't find it? Check your spam or promotions folder.</p>
+        <button class="btn btn-primary btn-block" type="button" id="vfCheck"><span class="btn-label">I've verified my email</span><span class="spinner" aria-hidden="true"></span></button>
+        <div class="row-between">
+          <button class="linkbtn" type="button" id="vfResend">Resend email</button>
+          <button class="linkbtn" type="button" id="vfOut">Use a different account</button>
+        </div>
+        <button class="linkbtn" type="button" id="vfDemo" hidden>Mark as verified (preview)</button>
+      </section>
+
+      <!-- Shown when someone signs in with Google but has no club profile yet -->
+      <form class="stack auth-form" id="profileForm" novalidate hidden>
+        <p class="muted small" id="pfEmail"></p>
+        <div class="fl">
+          <input id="pfName" autocomplete="name" placeholder=" " required>
+          <label for="pfName">Full name</label>
+          <svg class="fl-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+        </div>
+        <div class="row2">
+          <div class="fl">
+            <input id="pfRoll" placeholder=" " required>
+            <label for="pfRoll">Roll number</label>
+            <svg class="fl-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg>
+          </div>
+          <div class="fl fl-select">
+            <select id="pfYear" required><option value="">Year</option><option>1st year</option><option>2nd year</option><option>3rd year</option></select>
+            <svg class="fl-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          </div>
+        </div>
+        <div class="fl">
+          <input id="pfCode" autocomplete="off" placeholder=" " required>
+          <label for="pfCode">Club join code</label>
+          <svg class="fl-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3"/></svg>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit" id="pfBtn"><span class="btn-label">Finish signing up</span><span class="spinner" aria-hidden="true"></span></button>
+        <button class="linkbtn" type="button" id="pfOut">Use a different account</button>
+      </form>
+
+      <p class="secure-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg> Secured login. Passwords are never stored in plain text.</p>
+    </div>
+  </main>
+</div>
+<script type="module" src="assets/js/login.js"></script>
+</body>
+</html>

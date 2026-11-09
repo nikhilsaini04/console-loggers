@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice Sheets · The Console Loggers</title>
+<meta name="description" content="38 tracked practice sheets: programming languages, OS, DBMS, networks, cloud, the Java stack, domains, aptitude, OOPs, HR and system design.">
+<link rel="icon" type="image/png" href="assets/img/logo-64.png">
+<link rel="apple-touch-icon" href="assets/img/logo-160.png">
+<script>document.documentElement.classList.add("fx");setTimeout(function(){if(!document.documentElement.classList.contains("fx-ready")){document.documentElement.classList.remove("fx")}},2500)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=Martian+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<main class="wrap">
+  <div class="page-head">
+    <span class="eyebrow">Practice sheets &amp; resources</span>
+    <h1>Practice Arena</h1>
+  </div>
+  <div class="notice" id="loginNotice" hidden style="margin-bottom:16px"><span>Log in to tick exercises and save your progress.</span><a class="btn btn-primary btn-sm" href="login.html?next=practice.html">Log in</a></div>
+
+  <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center">
+    <div class="tab-groups" id="langTabs" role="tablist" aria-label="Sheet"></div>
+    <span class="save-state" id="saveState" role="status"></span>
+  </div>
+  <div id="langPanel" style="display:grid;gap:16px;margin-top:20px"></div>
+
+  <section class="block" id="tracks">
+    <div class="sec-head"><span class="eyebrow">Beyond DSA</span><h2>Career roadmaps</h2>
+      <p class="muted">A starter roadmap for each track, in order, with free resources to learn from.</p></div>
+    <div id="trackList" style="display:grid;gap:14px"></div>
+  </section>
+
+  <section class="block" id="more">
+    <div class="sec-head"><span class="eyebrow">Study resources</span><h2>Free learning resources</h2>
+      <p class="muted">Free courses, references and practice sites to use alongside the club's sheets.</p></div>
+    <div class="grid g2" id="resources"></div>
+  </section>
+
+  <section class="block" style="padding-bottom:0">
+    <div class="sec-head"><span class="eyebrow">Platforms</span><h2>Where to practice</h2>
+      <p class="muted">Use these alongside the sheets. Club assignments are posted on LeetCode unless your instructor says otherwise.</p></div>
+    <div class="platforms" id="platforms"></div>
+  </section>
+</main>
+<script type="module" src="assets/js/practice.js"></script>
+</body>
+</html>

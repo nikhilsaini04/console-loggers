@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSA Sheet · The Console Loggers</title>
+<meta name="description" content="A 21-step DSA practice sheet with progress tracking for members of The Console Loggers coding club at NIU.">
+<link rel="icon" type="image/png" href="assets/img/logo-64.png">
+<link rel="apple-touch-icon" href="assets/img/logo-160.png">
+<script>document.documentElement.classList.add("fx");setTimeout(function(){if(!document.documentElement.classList.contains("fx-ready")){document.documentElement.classList.remove("fx")}},2500)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=Martian+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<main class="wrap">
+  <div class="page-head">
+    <span class="eyebrow">DSA Sheet</span>
+    <h1>Master DSA, Step by Step</h1>
+  </div>
+
+  <div class="notice" id="loginNotice" hidden><span>Log in to tick problems and save your progress. You can browse the sheet without an account.</span><a class="btn btn-primary btn-sm" href="login.html?next=dsa.html">Log in</a></div>
+  <div class="notice" id="instrNotice" hidden><span>You're signed in with an instructor account. Use the dashboard to see student progress.</span><a class="btn btn-ghost btn-sm" href="dashboard.html">Open dashboard</a></div>
+
+  <section class="summary" aria-label="Progress summary" style="margin-top:16px">
+    <div>
+      <div class="big"><span class="n" id="doneN">0</span><span class="of" id="ofN">of 0 solved</span><span class="pct" id="pct">0%</span></div>
+      <div class="stack-bar" aria-hidden="true"><i class="e" id="sE"></i><i class="m" id="sM"></i><i class="h" id="sH"></i><i class="c" id="sC"></i></div>
+      <div class="diffs">
+        <div class="diff e"><span>Easy</span><b id="dE">0/0</b></div>
+        <div class="diff m"><span>Medium</span><b id="dM">0/0</b></div>
+        <div class="diff h"><span>Hard</span><b id="dH">0/0</b></div>
+      </div>
+    </div>
+    <div class="side">
+      <div style="display:grid;gap:2px"><span class="label">Next up</span><span id="nextWrap" style="display:grid;gap:2px"></span></div>
+      <div><span class="label">Revision list</span><div style="font-weight:600" id="revN">0 starred</div></div>
+      <div><span class="label">Steps finished</span><div style="font-weight:600" id="stepsDone">0</div></div>
+      <span class="save-state" id="saveState" role="status"></span>
+    </div>
+  </section>
+
+  <div class="toolbar" role="search" style="margin-top:16px">
+    <label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search problems" aria-label="Search problems"></label>
+    <div class="chips" id="diffChips" aria-label="Difficulty">
+      <button class="chip" data-v="all" aria-pressed="true">All</button><button class="chip" data-v="E" aria-pressed="false">Easy</button>
+      <button class="chip" data-v="M" aria-pressed="false">Medium</button><button class="chip" data-v="H" aria-pressed="false">Hard</button>
+    </div>
+    <div class="chips" id="statChips" aria-label="Status">
+      <button class="chip" data-v="all" aria-pressed="true">Any</button><button class="chip" data-v="todo" aria-pressed="false">To do</button>
+      <button class="chip" data-v="done" aria-pressed="false">Solved</button><button class="chip" data-v="rev" aria-pressed="false">Starred</button>
+    </div>
+    <button class="btn btn-ghost btn-sm" id="toggleAll">Expand all</button>
+  </div>
+
+  <div class="steps" id="steps"></div>
+  <div class="empty" id="empty" hidden>No problems match these filters.</div>
+  <p class="muted" style="font-size:13px;margin-top:20px">Problem links open on LeetCode. Items marked “Concept” are topics to practice on your own, such as patterns, sorting algorithms written by hand, and graph algorithms.</p>
+</main>
+<script type="module" src="assets/js/dsa.js"></script>
+</body>
+</html>
